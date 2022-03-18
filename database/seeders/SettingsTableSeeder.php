@@ -1,6 +1,6 @@
 <?php
 
-namespace Joy\VoyagerBreadReplaceKeyword\Database\Seeders;
+namespace Joy\VoyagerBreadSubscription\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Models\Setting;
@@ -12,27 +12,27 @@ class SettingsTableSeeder extends Seeder
      */
     public function run()
     {
-        $setting = $this->findSetting('replace_keyword.key1');
+        $setting = $this->findSetting('subscription.key1');
         if (!$setting->exists) {
             $setting->fill([
-                'display_name' => __('joy-voyager-bread-replace-keyword::seeders.settings.replace_keyword.key1'),
+                'display_name' => __('joy-voyager-bread-subscription::seeders.settings.subscription.key1'),
                 'value'        => 'Joy Voyager',
                 'details'      => '',
                 'type'         => 'text',
                 'order'        => 1,
-                'group'        => 'ReplaceKeyword',
+                'group'        => 'Subscription',
             ])->save();
         }
 
-        $setting = $this->findSetting('replace_keyword.image');
+        $setting = $this->findSetting('subscription.image');
         if (!$setting->exists) {
             $setting->fill([
-                'display_name' => __('joy-voyager-bread-replace-keyword::seeders.settings.replace_keyword.image'),
+                'display_name' => __('joy-voyager-bread-subscription::seeders.settings.subscription.image'),
                 'value'        => '',
                 'details'      => '',
                 'type'         => 'image',
                 'order'        => 2,
-                'group'        => 'ReplaceKeyword',
+                'group'        => 'Subscription',
             ])->save();
         }
     }
